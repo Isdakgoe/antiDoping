@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <hr>
+    <input type="text" id="data_dic" value={{data_dic}} hidden/>
+
+    <input type="text" id="search">
+    <input type="button" value="絞り込む" id="button">
+    <input type="button" value="すべて表示" id="button2">
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>使ってよいか否か</th><th>購入先</th><th>絞り込み１</th>
+                <th>絞り込み２</th><th>名称</th><th>病院</th>
+                <th>ページ</th><th>市販元</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for No in data_dic: %}
+                <tr>
+                {% for data in data_dic[No]: %}
+                    <td> {{ data }} </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+
+
